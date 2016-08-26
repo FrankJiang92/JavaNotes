@@ -5,21 +5,9 @@ import java.util.Arrays;
 public class BubbleSort {
 
 	public static void main(String[] args) {
-		
-		
-		
-		try {
-//			int[] input = {1, 4, 3, 2, 5, 1, 3, 4, 5, 9, 2};
-			int[] input = {};
-			if (input.length <= 0)
-				throw new Exception("ddddddderror!");
-			sort(input);
-			System.out.println(Arrays.toString(input));
-			
-			
-		} catch (Exception e) {
-			System.out.println("------>" + e);
-		}
+		int[] input = {1, 4, 3, 2, 5, 1, 3, 4, 5, 9, 2};
+		sort(input);
+		System.out.println(Arrays.toString(input));
 	}
 
 	/**
