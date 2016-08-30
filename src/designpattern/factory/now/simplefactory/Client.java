@@ -8,11 +8,11 @@ public class Client {
 		 */
 		ComputerFactory factory = new ComputerFactory();
 		
-		Computer lenovoComputer = factory.getComputer(ComputerType.LENOVO);
-		lenovoComputer.makeComputer();
+		Computer lenovoComputer = factory.makeComputer(ComputerType.LENOVO);
+		lenovoComputer.getComputer();
 		
-		Computer acerComputer = factory.getComputer(ComputerType.ACER);
-		acerComputer.makeComputer();
+		Computer acerComputer = factory.makeComputer(ComputerType.ACER);
+		acerComputer.getComputer();
 		
 	}
 

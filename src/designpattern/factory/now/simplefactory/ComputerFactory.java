@@ -2,7 +2,7 @@ package designpattern.factory.now.simplefactory;
 
 public class ComputerFactory {
 
-	public Computer getComputer(ComputerType type) {
+	public Computer makeComputer(ComputerType type) {
 		Computer computer = null;
 		switch (type) {
 		case LENOVO:

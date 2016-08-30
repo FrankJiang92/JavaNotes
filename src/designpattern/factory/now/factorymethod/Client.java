@@ -9,12 +9,12 @@ public class Client {
 		 * 每个工厂继承抽象工厂接口，并实现getComputer方法
 		 */
 		ComputerFactory lenovoFactory = new LenovoComputerFactory();
-		Computer lenovoComputer = lenovoFactory.getComputer();
-		lenovoComputer.makeComputer();
+		Computer lenovoComputer = lenovoFactory.makeComputer();
+		lenovoComputer.getComputer();
 
 		ComputerFactory acerFactory = new AcerComputerFactory();
-		Computer acerComputer = acerFactory.getComputer();
-		acerComputer.makeComputer();
+		Computer acerComputer = acerFactory.makeComputer();
+		acerComputer.getComputer();
 		
 	}
 
