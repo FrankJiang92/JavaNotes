@@ -1,4 +1,4 @@
-package designpattern.factory.factorymethod;
+package designpattern.factory.old.factorymethod;
 
 public class FactoryMethodTest {
 

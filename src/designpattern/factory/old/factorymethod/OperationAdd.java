@@ -1,4 +1,4 @@
-package designpattern.factory.simplefactory;
+package designpattern.factory.old.factorymethod;
 
 /**
  * 加法运算类

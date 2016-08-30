@@ -1,4 +1,4 @@
-package designpattern.factory.simplefactory;
+package designpattern.factory.old.simplefactory;
 
 public class SimpleFactoryTest {
 

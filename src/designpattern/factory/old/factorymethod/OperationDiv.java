@@ -1,4 +1,4 @@
-package designpattern.factory.factorymethod;
+package designpattern.factory.old.factorymethod;
 
 /**
  * 除法运算类

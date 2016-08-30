@@ -1,4 +1,4 @@
-package designpattern.factory.simplefactory;
+package designpattern.factory.old.simplefactory;
 
 /**
  * 减法运算类

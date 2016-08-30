@@ -1,4 +1,4 @@
-package designpattern.factory.factorymethod;
+package designpattern.factory.old.simplefactory;
 
 /**
  * 运算接口
