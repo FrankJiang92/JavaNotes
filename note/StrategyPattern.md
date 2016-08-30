@@ -14,6 +14,34 @@
 	- 需要安全地封装多种同一类型的操作时
 	- 出现同一抽象类有多个子类，而又需要使用 if-else 或者 switch-case 来选择具体子类时
 
+#### UML图
+
+![strategy](res/strategy.jpg)
+
+#### 组成
+
+* `Concext`:用来操作策略类的上下文环境
+* `Strategy`: 抽象策略接口
+* `ConcreteStrategy`: 具体策略实现类
+
+#### 实例
+
+以对数组排序为例：
+* `ArraySort`: 用来操作策略类的上下文环境
+	- `sort()`: 排序方法
+	- `setStrategy()`: 设置策略类
+
+* `Strategy`: 抽象策略接口
+	- `sort()`: 抽象排序方法
+
+* `BubbleSortStrategy`: 冒泡排序策略
+	- `sort()`
+
+* `SelectionSortStrategy`: 选择排序策略
+	- `sort()` 
+
+* 代码参考：`JavaNotes/src/designpattern/strategy`
+
 ##### 参考
 * http://blog.csdn.net/self_study/article/details/52248437
 
