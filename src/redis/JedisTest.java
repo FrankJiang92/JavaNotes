@@ -35,5 +35,6 @@ public class JedisTest {
 		for (String key : keyList) {
 			System.out.println("----->" + key);
 		}
+		jedis.disconnect();
 	}
 }
