@@ -6,6 +6,21 @@
 * 数据结构与算法
 * Java设计模式
 * Freemarker
+* redis
+
+#### 详细内容
+
+* **算法**
+	* [快速排序](note/QuickSort.md)
+
+* **设计模式**
+	* [简单工厂/工厂方法/抽象工厂](note/FactoryPattern.md)
+	* [外观模式](note/FacadePattern.md)
+	* [模版模式](note/TemplatePattern.md)
+	* [策略模式](note/StrategyPattern.md)
+	
+* **JVM**
+	* [JVM知识体系](note/JVM.md)
 
 ---
 @FrankJiang
