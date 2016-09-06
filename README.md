@@ -18,7 +18,9 @@
 	* [外观模式](note/FacadePattern.md)
 	* [模版模式](note/TemplatePattern.md)
 	* [策略模式](note/StrategyPattern.md)
-	
+	* [适配器模式](note/AdapterPattern.md)
+	* [观察者模式](note/ObserverPattern.md)
+
 * **JVM**
 	* [JVM知识体系](note/JVM.md)
 
