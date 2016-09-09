@@ -20,6 +20,7 @@
 	* [策略模式](note/StrategyPattern.md)
 	* [适配器模式](note/AdapterPattern.md)
 	* [观察者模式](note/ObserverPattern.md)
+	* [装饰者模式](note/DecoratorPattern.md)
 
 * **JVM**
 	* [JVM知识体系](note/JVM.md)
