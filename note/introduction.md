@@ -99,4 +99,56 @@ AJAX：异步的javascript和xml，
 	* 四个必要条件：互斥，请求与保持，不可剥夺，循环等待
 	* 避免方法：打破其中一个任意一个条件;安全序列（系统中的所有进程能够按照某一种次序分配资源，并且依次地运行完毕），银行家算法
 
-* 
+* Java数据结构
+
+	* Collection
+		* Set
+			* HashSet
+			* TreeSet
+		* List
+			* Vector
+			* ArrayList
+			* LinkedList
+	* Map
+		* HashMap
+		* HashTable
+		* TreeMap
+
+* mysql加索引
+
+	* 创建和删除索引：索引的创建可以在CREATE TABLE语句中进行，也可以单独用CREATE INDEX或ALTER TABLE来给表增加索引。删除索引可以利用ALTER TABLE或DROP INDEX语句来实现
+	* 三种创建索引的格式：普通索引、UNIQUE索引和PRIMARY KEY索引
+	``` sql
+	alter table table_name add index index_name (column_list) ;
+	alter table table_name add unique (column_list) ;
+	alter table table_name add primary key (column_list) ;
+
+	create index index_name on table_name (column_list) ;
+	create unique index index_name on table_name (column_list) ;
+
+	drop index index_name on table_name ;
+	alter table table_name drop index index_name ;
+	alter table table_name drop primary key ;
+	```
+	
+
+* hibernate机制和作用
+* mybatis机制和作用
+* osgi
+* JCrontab
+
+* 网络编程中设计并发服务器，使用多进程 与 多线程 ，请问有什么区别？ 
+
+答案一:
+1，进程：子进程是父进程的复制品。子进程获得父进程数据空间、堆和栈的复制品。
+2，线程：相对与进程而言，线程是一个更加接近与执行体的概念，它可以与同进程的其他线程共享数据，但拥有自己的栈空间，拥有独立的执行序列。
+两者都可以提高程序的并发度，提高程序运行效率和响应时间。
+线程和进程在使用上各有优缺点：线程执行开销小，但不利于资源管理和保护；而进程正相反。同时，线程适合于在SMP机器上运行，而进程则可以跨机器迁移。
+
+答案二:
+根本区别就一点：用多进程每个进程有自己的地址空间(address space)，线程则共享地址空间。所有其它区别都是由此而来的：
+1。速度：线程产生的速度快，线程间的通讯快、切换快等，因为他们在同一个地址空间内。
+2。资源利用率：线程的资源利用率比较好也是因为他们在同一个地址空间内。
+3。同步问题：线程使用公共变量/内存时需要使用同步机制还是因为他们在同一个地址空间内。
+
+* [阻塞、非阻塞、同步、异步浅析](http://www.cnblogs.com/bizhu/archive/2012/05/17/2506197.html)
