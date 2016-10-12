@@ -6,7 +6,7 @@
 * 数据结构与算法
 * Java设计模式
 * Freemarker
-* redis
+* JVM
 
 #### 详细内容
 
@@ -21,9 +21,15 @@
 	* [适配器模式](note/AdapterPattern.md)
 	* [观察者模式](note/ObserverPattern.md)
 	* [装饰者模式](note/DecoratorPattern.md)
-
+	* [命令模式](note/CommandPattern.md)
+* **多线程**
+	* [Java线程知识](note/JavaThread.md)
+	
 * **JVM**
-	* [JVM知识体系](note/JVM.md)
+	* [JVM学习笔记](note/JVM.md)
 
+* **Linux**
+	* [Linux学习笔记](note/Linux.md)
+	
 ---
 @FrankJiang
