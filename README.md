@@ -7,6 +7,7 @@
 * Java设计模式
 * Freemarker
 * JVM
+* 多线程
 
 #### 详细内容
 
@@ -22,6 +23,7 @@
 	* [观察者模式](note/ObserverPattern.md)
 	* [装饰者模式](note/DecoratorPattern.md)
 	* [命令模式](note/CommandPattern.md)
+	
 * **多线程**
 	* [Java线程知识](note/JavaThread.md)
 	
