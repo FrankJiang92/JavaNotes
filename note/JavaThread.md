@@ -417,5 +417,118 @@ public class Test {
 
 ## 8. Callable、Future、FutureTask
 
+### 8.1 Callable
+
+* Runnable接口源码
+
+``` java
+public interface Runnable {
+	public abstract void run();
+}
+```
+
+* Callable接口源码
+
+``` java
+public interface Callable<V> {
+	V call() throws Exception;
+}
+```
+
+* Callable是一个泛型接口，call()返回的类型就是传递进来的V类型
+
+* Callable使用——配合ExecutorService来使用
+	* `<T> Future<T> submit(Callable<T> task);`
+	* `<T> Future<T> submit(Runnable task, T result);`
+	* `Future<?> submit(Runnable task);`
+
+### 8.2 Future
+
+* Future可以对于具体的Runnable或Callable任务的执行结果进行取消、查询是否完成、获取结果；必要时通过**get方法**获取执行结果，该方法会一直**阻塞**知道任务返回结果
+
+* Future接口源码
+
+``` java
+public interface Future<V> {
+	//用来取消任务，取消成功返回true，mayInterruptIfRunning表示是否取消正在执行却没有执行完毕的任务
+	boolean cancel(boolean mayInterruptIfRunning);
+	// 表示任务是否取消成功
+	boolean isCancelled();
+	// 表示任务是否完成
+	boolean isDone();
+	// 获取执行结果，会阻塞
+	V get() throws InterruptedException, ExecutionException;
+	// 在指定时间内获取执行结果
+	V get(long timeout, TimeUnit unit) throws InterruptedException, ExecutionException, TimeoutException;
+}
+``` 
+
+* Future功能
+	* 判断任务是否完成
+	* 能够中断任务
+	* 能够获取任务执行结果
+
+### 8.3 FutureTask
+
+* FutureTask定义
+
+``` java
+public class FutureTask<V> implements RunnableFuture<V> {
+	public FutureTask(Callable<V> callable) {
+
+	}
+
+	public FutureTask(Runnable runnable, V result) {
+
+	}
+}
+```
+
+* RunnableFuture接口的定义
+
+``` java
+public interface RunnableFuture<V> extends Runnable, Future<V> {
+	void run();
+}
+```
+
+* FutureTask即可以作为Runnable被线程执行，又可以作为Future得到Callable的返回值
+
+### 8.4 应用
+
+* Callable+Future获取执行结果
+
+``` java
+ExecutorService executor = Executors.newCachedThreadPool();
+Task task = new Task();	// callable实现类
+Future<Integer> result = executor.submit(task);
+executor.shutdown();
+
+Integer res = result.get();	// 通过Future获取结果
+```
+
+* Callable+FutureTask获取执行结果
+
+``` java
+ExecutorService executor = Executors.newCachedThreadPool();
+Task task = new Task();	// callable实现类
+FutureTask<Integer> futureTask = new FutureTask<Integer>(task);
+executor.submit(futureTask);
+executor.shutdown();
+
+Integer res = futureTask.get();
+```
+
+* Callable+FutureTask+Thread获取执行结果
+
+``` java
+Task task = new Task();
+FutureTask<Integer> futureTask = new FutureTask<Integer>(task);
+Thread thread = new Thread(futureTask);
+thread.start();
+
+Integer res =  futureTask.get();
+```
+
 ### 参考阅读
 * [Java并发编程：Callable、Future和FutureTask](http://www.cnblogs.com/dolphin0520/p/3949310.html)
