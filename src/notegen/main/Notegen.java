@@ -12,6 +12,7 @@ public class Notegen {
 
 	public static String TYPE = ".md";
 	public static String TITLE = "### %s";
+	public static String INDEX = "* [主        页](../../index.md)";
 	public static String README_OF_DAY = "* [列表目录](../README.md)";
 	public static String CALENDAR_OF_DAY = "* [日历目录](../Calendar.md)";
 	public static String BEFORE_OF_DAY = "* [ 前一天 ](../%s/%s.md)";
@@ -28,7 +29,7 @@ public class Notegen {
 	public static String MONTH_OF_README = "* [%s](%s.md)\r\n";
 	public static String DAY_OF_CALENDAR = "[%d](%s/%s.md)";
 	
-	public static String SAVE_PATH = "E:/WorkNote/";
+	public static String SAVE_PATH = "E:/WorkNote/diary/";
 	
 	public static void main(String[] args) {
 		
@@ -105,6 +106,8 @@ public class Notegen {
 		sb.append(String.format(TITLE, DateUtil.getTitle(now)));
 		sb.append("\r\n");
 		sb.append("\r\n");
+		sb.append(INDEX);
+		sb.append("\r\n");
 		sb.append(README_OF_DAY);
 		sb.append("\r\n");
 		sb.append(CALENDAR_OF_DAY);
@@ -120,7 +123,7 @@ public class Notegen {
 	
 	public String generateStartContentStartOfMonth(Calendar now) {
 		StringBuffer sb = new StringBuffer();
-		sb.append(String.format(TITLE, DateUtil.getFolderName(now)));
+		sb.append(String.format(TITLE, DateUtil.getMonthTitle(now)));
 		sb.append("\r\n");
 		sb.append("\r\n");
 		sb.append(README_OF_MONTH);
@@ -134,7 +137,7 @@ public class Notegen {
 	}
 	
 	public String genearteContentOfMonth(Calendar now) {
-		return String.format(DAY_OF_MONTH, DateUtil.getFileName(now), DateUtil.getFolderName(now), DateUtil.getFileName(now));
+		return String.format(DAY_OF_MONTH, DateUtil.getTitle(now), DateUtil.getFolderName(now), DateUtil.getFileName(now));
 	}
 	
 	public String generateStartContentOfReadme() {
@@ -154,7 +157,7 @@ public class Notegen {
 	}
 	
 	public String generateContentOfReadme(Calendar now) {
-		return String.format(MONTH_OF_README, DateUtil.getFolderName(now), DateUtil.getFolderName(now));
+		return String.format(MONTH_OF_README, DateUtil.getMonthTitle(now), DateUtil.getFolderName(now));
 	}
 	
 	public String generateStartContentOfCalendar() {
